@@ -12,3 +12,23 @@
 .card .card-img:hover {
   opacity: .9;
 }
+
+.pickDate {
+  width: 25%;
+}
+.pickDate .row {
+  border-bottom:2px solid #000;
+}
+.pickDate .label{
+
+}
+.pickDate .check{
+  text-align: center;
+}
+.pickDate .label.bg-danger,
+.pickDate .check.bg-danger {
+  cursor:not-allowed
+}
+.pickDate .check.bg-danger .custom-control-label {
+display: none;
+}
