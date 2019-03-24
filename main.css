@@ -3,9 +3,17 @@
 .card {
   border:none;
 }
-.card .card-title {
+.card .card-body {
+  padding-bottom: 0;
+}
+.card .card-title,
+.card .card-text{
   text-align: center;
 }
+.card .card-subtitle{
+  text-align: right;
+}
+
 .card .card-img {
   cursor: pointer;
 }
