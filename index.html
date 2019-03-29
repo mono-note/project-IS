@@ -38,26 +38,26 @@
 
     <div class="tab-content" id="nav-tabContent">
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-        <form>
+        <form id="formRegister" method="POST">
           <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
             <div class="col">
-              <input type="text" class="form-control" placeholder="First name">
+              <input type="text" class="form-control" id="inputFirstname" name="firstname" placeholder="First name">
             </div>
             <div class="col">
-              <input type="text" class="form-control" placeholder="Last name">
+              <input type="text" class="form-control" id="inputLastname" name="lastname" placeholder="Last name">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+              <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Username">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
             </div>
             <div class="col">
               <input type="password" class="form-control" id="inputRepeatPassword" placeholder="Repeat Password">
@@ -68,13 +68,13 @@
           <div class="form-group row">
             <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+              <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="Phone">
             </div>
           </div>
           <div class="form-group row">
@@ -86,23 +86,23 @@
           <div class="form-group row">
             <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
             <div class="col-sm-7">
-              <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+              <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Address">
             </div>
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputAddressZip" placeholder="Zip">
+              <input type="text" class="form-control" id="inputAddressZip" name="zip" placeholder="Zip">
             </div>
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <button type="button" class="btn btn-primary">Sign in</button>
             </div>
           </div>
         </form>
       </div>
       <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
         <div class="pickDate">
-          <div class="row">
-            <div class="label col-sm-8 bg-light">10.00-11.00</div>
+          <!-- <div class="row">
+            <div class="label col-sm-8 bg-light range">10.00-11.00</div>
             <div class="check col-sm-4 bg-light">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
@@ -136,7 +136,7 @@
                 <label class="custom-control-label" for="customCheck4"></label>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
