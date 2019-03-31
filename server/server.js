@@ -52,29 +52,35 @@ console.log(config.sid);
     // console.log(addUsers,addCustomer);
 
 
-    let showCourt = await connection.execute(`
-      SELECT * FROM Reservation r
-      LEFT JOIN Time_Schedule t
-      ON r.reserve_time = t.time_code
-      LEFT JOIN Court c ON r.court_id = c.court_id
-    `);
+    // let showCourt = await connection.execute(`
+    //   SELECT * FROM Reservation r
+    //   LEFT JOIN Time_Schedule t
+    //   ON r.reserve_time = t.time_code
+    //   LEFT JOIN Court c ON r.court_id = c.court_id
+    // `);
 
-
-    INSERT INTO Reservation VALUES ('r02','ss','c103',sysdate,'t1718',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
-
-
-    let addReserve = await connection.execute( `
-      INSERT INTO Reservation VALUES (
-        '`+reserveid+`',
-        '`+customerid+`',
-        '`+courtid+`',
-        '`+datenow+`',
-        '`+time_code+`',
-        '`+timestamp+`',
-        '`+timestamp+`'
-      )
-    `);
-
+    // if(timecode>2) loop query 
+    // let addReserve = await connection.execute( `
+    //   INSERT INTO Reservation VALUES (
+    //     '`+reserveid+`',
+    //     '`+customerid+`',
+    //     '`+courtid+`',
+    //     '`+datereserve+`',
+    //     '`+time_code+`',
+    //     '`+timestamp+`',
+    //     '`+timestamp+`'
+    //   )
+    // `);
+    let courtno,price,courtid;
+    // let updateCourt = await connection.execute(
+    // `
+    //   UPDATE Court
+    //   SET court_no = '`+courtno+ `', price = '`+value2+`'
+    //   WHERE court_id = vid;
+    // `)
+    // let deleteCourt = await connection.execute(`
+    //   DELETE FROM Court WHERE court_id = '`+courtid+`';
+    // `)
     console.log(addReserve);
     // await connection.execute("commit")
   }

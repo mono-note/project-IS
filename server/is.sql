@@ -142,3 +142,15 @@ INSERT INTO Time_Schedule VALUES ('t1819','18.00-19.00');
 INSERT INTO Time_Schedule VALUES ('t1920','19.00-20.00');
 INSERT INTO Time_Schedule VALUES ('t2021','20.00-21.00');
 INSERT INTO Time_Schedule VALUES ('t2122','21.00-22.00');
+
+
+UPDATE Court
+SET court_no = value1, price = value2
+WHERE court_id = vid;
+
+DELETE FROM Court WHERE court_id = vid;
+
+CREATE SEQUENCE 'detail_seq' START WITH 1;
+INSERT INTO Reservation VALUES ('R0001','C0002','RD-0001','20/2/2019',sysdate,sysdate)
+INSERT INTO Reservation_Detail VALUES ('detail_seq'.nextvalue,'RD-0001','COR-001','t1617')
+INSERT INTO Reservation_Detail VALUES ('detail_seq'.nextvalue,'RD-0001','COR-001','t1718')

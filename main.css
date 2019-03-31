@@ -20,16 +20,16 @@
 .card .card-img:hover {
   opacity: .9;
 }
-
+/* pickdate */
 .pickDate {
-  width: 25%;
+  width: 33%;
 }
-.pickDate .row {
+.pickDate .row,
+.showDate .row {
   border-bottom:2px solid #000;
+  margin: 0;
 }
-.pickDate .label{
 
-}
 .pickDate .check{
   text-align: center;
 }
@@ -39,4 +39,40 @@
 }
 .pickDate .check.bg-danger .custom-control-label {
 display: none;
+}
+.pickDate button {
+  position: absolute;
+  top: 420px;
+  left: 280px;
+}
+.showDate .label {
+  width: 100%;
+  flex: 1;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* card */
+.card .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+.nextbtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.nextbtn button {
+  margin: 0 10px;
+}
+
+#inputReserveDate{
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+#inputReserveDate:hover{
+  opacity: .9;
 }
