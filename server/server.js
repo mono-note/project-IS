@@ -22,7 +22,11 @@ console.log(config.sid);
     let n = date.getTime();
     let userId = n.toString().substring(4);
     console.log(userId);
-    let firstname = 'ss',lastname = 'ss',email = 'ss',address = 'ss',username,password,customerid = 'ss'
+    let firstname = 'ss',
+    lastname = 'ss',
+    email = 'ss'
+    ,address = 'ss',
+    username,password,customerid = 'ss'
     let birthdate='12-12-1990'
     let phone= '0817933333'
     username = 'dd',
@@ -71,7 +75,7 @@ console.log(config.sid);
     //     '`+timestamp+`'
     //   )
     // `);
-    let courtno,price,courtid;
+    let courtno, price, courtid;
     // let updateCourt = await connection.execute(
     // `
     //   UPDATE Court
@@ -81,8 +85,38 @@ console.log(config.sid);
     // let deleteCourt = await connection.execute(`
     //   DELETE FROM Court WHERE court_id = '`+courtid+`';
     // `)
-    console.log(addReserve);
+    // console.log(addReserve);
     // await connection.execute("commit")
+  
+    // let reserve_id = 'R0005'
+  
+    // let searchReserve = await connection.execute(`
+    //   SELECT cu.firstname, cu.lastname, co.court_no,
+    //    t.time_range, r.reserve_date
+    //   FROM reservation r
+    //   LEFT JOIN customer cu ON r.customer_id = cu.customer_id
+    //   LEFT JOIN court co ON r.court_id = co.court_id
+    //   LEFT JOIN time_schedule t ON r.reserve_time = t.time_code
+    //   WHERE r.reserve_id = '` + reserve_id + `';
+    // `)
+  
+  
+    // console.log(searchReserve);
+    let reportYear = '2019',
+      reportMonth = 'March'
+    let reportPeriod = ''
+  
+    let getReportMonthly = await connection.execute(`
+      SELECT count(r.court_id), c.court_no 
+      FROM reservation r
+      LEFT JOIN court c 
+      ON c.court_id = r.court_id
+      WHERE to_char(reserve_date, 'mm-yyyy') = '` + reportPeriod + `'
+      GROUP BY (court_no)
+      ORDER BY court_no;
+    `)
+  
+    console.log(getReportMonthly);
   }
-
+  
   run();
