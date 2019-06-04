@@ -36,17 +36,24 @@ $(function () {
       'opacity': '.8'
     })
   }
+
   $.each(timecode, function (i, v) {
-    console.log(v.status);
-    var red = (v.status == '1') ? 'bg-danger' : ''
-    $('.pickDate').append(
-      '<div class="row ' + red + '" id="' + v.code + '"><div class="label col-sm-8 ">' + v.range + '</div><div class="check col-sm-4 ' + red + '"><div class="custom-control custom-checkbox"><input type="checkbox" class="custom-control-input" id="customCheck' + i + '"><label class="custom-control-label" for="customCheck' + i + '"></label></div></div></div>'
+    let red = (v.status == '1') ? 'bg-danger' : ''
+    $('.pickDate').append(`
+    <div class="row ` + red + `" id="` + v.code + `">
+      <div class="label col-sm-8 ">` + v.range + `</div>
+      <div class="check col-sm-4 ` + red + `">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck` + i + `">
+          <label class="custom-control-label" for="customCheck` + i + `"></label>
+        </div>
+      </div>
+    </div>`
     )
   })
 
   $.each(timecode, function (i, v) {
-    console.log(v.status);
-    var red = (v.status == '1') ? 'bg-danger' : ''
+    let red = (v.status == '1') ? 'bg-danger' : ''
     $('.showDate').append(
       '<div class="row ' + red + '" id="' + v.code + '"><div class="label col-sm-8 ">' + v.range + '</div></div>'
     )
@@ -152,3 +159,4 @@ var timecode = [{
   "range": "21.00-22.00",
   "status": "0"
 }]
+

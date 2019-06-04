@@ -38,6 +38,8 @@
         aria-controls="nav-reserve" aria-selected="false">Reserve</a>
       <a class="nav-item nav-link" id="nav-admin-tab" data-toggle="tab" href="#nav-admin" role="tab"
         aria-controls="nav-admin" aria-selected="false">Admin</a>
+      <a class="nav-item nav-link" id="nav-confirm-tab" data-toggle="tab" href="#nav-confirm" role="tab"
+        aria-controls="nav-confirm" aria-selected="false">confirm</a>
     </div>
   </nav>
   <div class="container mt-5">
@@ -393,7 +395,7 @@
               <td>R001</td>
               <td>Court101</td>
               <td>Blue</td>
-              <td>16.00-17.00,<br/>17.00-18.00</td>
+              <td>16.00-17.00</td>
               <td>17/3/2019</td>
             </tr>
             <tr>
@@ -401,23 +403,33 @@
               <td>R002</td>
               <td>Court102</td>
               <td>Blue</td>
-              <td>16.00-17.00</td>
+              <td>17.00-18.00</td>
               <td>24/3/2019</td>
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>R003</td>
               <td>Court103</td>
-              <td>blue</td>
+              <td>Blue</td>
               <td>16.00-17.00</td>
-              <td>24/3/2019</td>
+              <td>25/3/2019</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>R005</td>
+              <td>Court103</td>
+              <td>Blue</td>
+              <td>19.00-20.00</td>
+              <td>26/3/2019</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="tab-pane fade" id="nav-admin" role="tabpanel" aria-labelledby="nav-admin-tab">
         <div class="row">
-          <h2>Date <span class="h5 getdate">24/3/2019</span></h2>
+
+              <h2>Date <span class="h5 getdate"><input type="text" class="form-control" id="inputCode" name="code" placeholder="xx/xx/xxxx"></span></h2>
+
           <span id="inputReserveDate"><img src="/calendar.png" alt=""></button>
         </div>
         <div class="row">
@@ -503,6 +515,92 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="nav-confirm" role="tabpanel" aria-labelledby="nav-confirm-tab">
+        <div class="d-flex flex-column">
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Name</label>
+            <div class="col-sm-10">
+              <p class="h5">Peter Potter</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Court</label>
+            <div class="col-sm-10">
+              <p class="h5">Court103</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Date</label>
+            <div class="col-sm-10">
+              <p class="h5">25/03/2019</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Time</label>
+            <div class="col-sm-10">
+              <p class="h5">19.00-20.00</p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Price</label>
+            <div class="col-sm-10">
+              <p class="h5">150.-</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputCode" class="col-sm-2 col-form-label">Promotion Code</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="inputCode" name="code" placeholder="Code">
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+        <div class="d-flex flex-column">
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Name</label>
+            <div class="col-sm-10">
+              <p class="h5">Peter Potter</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Court</label>
+            <div class="col-sm-10">
+              <p class="h5">Court103</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Date</label>
+            <div class="col-sm-10">
+              <p class="h5">25/03/2019</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Time</label>
+            <div class="col-sm-10">
+              <p class="h5">19.00-20.00</p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2">Price</label>
+            <div class="col-sm-10">
+              <p class="h5">100.-</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputCode" class="col-sm-2 col-form-label">Promotion Code</label>
+            <div class="col-sm-5">
+              <p class="h5">NEW20</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row nextbtn" style="position:absolute">
+          <button type="button" class="btn btn-primary">Next</button>
         </div>
       </div>
     </div>

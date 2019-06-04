@@ -125,9 +125,9 @@ INSERT INTO Court VALUES ('c102','102','Rubber','Blue','150','0');
 INSERT INTO Court VALUES ('c103','103','Rubber','Blue','150','0');
 INSERT INTO Court VALUES ('c104','104','Rubber','Blue','150','0');
 INSERT INTO Court VALUES ('c105','105','Rubber','Blue','150','0');
-INSERT INTO Court VALUES ('c106','106','PVC','Red','120','0');
-INSERT INTO Court VALUES ('c107','107','PVC','Red','120','0');
-INSERT INTO Court VALUES ('c108','108','PVC','Red','120','0');
+INSERT INTO Court VALUES ('c106','106','PVC','Green','120','0');
+INSERT INTO Court VALUES ('c107','107','PVC','Green','120','0');
+INSERT INTO Court VALUES ('c108','108','PVC','Green','120','0');
 
 
 INSERT INTO Time_Schedule VALUES ('t1011','10.00-11.00');
