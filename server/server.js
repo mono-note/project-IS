@@ -212,7 +212,7 @@ async function run() {
   // console.log(searchReserve);
 
   let reportYear = '2019',
-    reportMonth = '05'
+    reportMonth = '03'
   let reportPeriod = reportMonth + '-' + reportYear
 
   // let getReportMonthly = await connection.execute(`
@@ -241,9 +241,15 @@ async function run() {
 
   console.log(getReportDayBilling);
 
-  let kk = await connection.execute(`    select * from billing
-  WHERE to_char(bill_date, 'dd-mm-yyyy') ='20-03-2019'`)
-  console.log(kk);
+  let kk = await connection.execute(`
+    SELECT court_no, bill_date, sum(amount)
+    FROM billing b    
+    JOIN reservation r ON b.reserve_id = r.reserve_id
+    JOIN court c ON c.court_id = r.court_id
+    WHERE to_char(reserve_date, 'mm-yyyy') ='` + reportPeriod + `'
+    GROUP BY court_no
+    ORDER BY court_no
+  `)
 
 
 }
