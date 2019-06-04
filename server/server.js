@@ -118,20 +118,20 @@ async function run() {
   // let courttype='PVC',color='Green',status='0'
 
 
-  let updateCourt = await connection.execute(`
-    UPDATE Court
-    SET court_no = '`+courtno+ `'  , price = '`+price+`',
-      court_type = '`+courttype+ `', court_color = '`+color+`',
-      status     = '`+status+ `'
-    WHERE court_id = '`+courtid+`'
-  `)
+  // let updateCourt = await connection.execute(`
+  //   UPDATE Court
+  //   SET court_no = '` + courtno + `'  , price = '` + price + `',
+  //     court_type = '` + courttype + `', court_color = '` + color + `',
+  //     status     = '` + status + `'
+  //   WHERE court_id = '` + courtid + `'
+  // `)
 
-  let deleteCourt = await connection.execute(`
-    DELETE FROM Court WHERE court_id = '`+courtid+`';
-  `)
+  // let deleteCourt = await connection.execute(`
+  //   DELETE FROM Court WHERE court_id = '` + courtid + `';
+  // `)
 
-  console.log(updateCourt,deleteCourt);
-  console.log(addReserve);
+  // console.log(updateCourt, deleteCourt);
+  // console.log(addReserve);
 
   // let listCourt = await connection.execute(`
   //   SELECT court_no, price, court_type, court_color, status FROM Court
@@ -198,42 +198,54 @@ async function run() {
 
 
   // console.log(addBill);
-    // let reserve_id = 'R0005'
+  let reserve_id = 'R0005'
 
-    // let searchReserve = await connection.execute(`
-    //   SELECT cu.firstname, cu.lastname, co.court_no,
-    //    t.time_range, r.reserve_date
-    //   FROM reservation r
-    //   LEFT JOIN customer cu ON r.customer_id = cu.customer_id
-    //   LEFT JOIN court co ON r.court_id = co.court_id
-    //   LEFT JOIN time_schedule t ON r.reserve_time = t.time_code
-    //   WHERE r.reserve_id = '` + reserve_id + `';
-    // `)
+  // let searchReserve = await connection.execute(`
+  //   SELECT cu.firstname, cu.lastname, co.court_no,
+  //    t.time_range, r.reserve_date
+  //   FROM reservation r
+  //   LEFT JOIN customer cu ON r.customer_id = cu.customer_id
+  //   LEFT JOIN court co ON r.court_id = co.court_id
+  //   LEFT JOIN time_schedule t ON r.reserve_time = t.time_code
+  //   WHERE r.reserve_id = '` + reserve_id + `'
+  // `)
+  // console.log(searchReserve);
 
+  let reportYear = '2019',
+    reportMonth = '05'
+  let reportPeriod = reportMonth + '-' + reportYear
 
-    // console.log(searchReserve);
-    let reportYear = '2019',
-      reportMonth = 'March'
-    let reportPeriod = ''
+  // let getReportMonthly = await connection.execute(`
+  //   SELECT count(r.court_id), c.court_no
+  //   FROM reservation r
+  //   LEFT JOIN court c
+  //   ON c.court_id = r.court_id
+  //   WHERE to_char(reserve_date, 'mm-yyyy') = '` + reportPeriod + `'
+  //   GROUP BY (court_no)
+  //   ORDER BY court_no
+  // `);
 
-    let getReportMonthly = await connection.execute(`
-      SELECT count(r.court_id), c.court_no
-      FROM reservation r
-      LEFT JOIN court c
-      ON c.court_id = r.court_id
-      WHERE to_char(reserve_date, 'mm-yyyy') = '` + reportPeriod + `'
-      GROUP BY (court_no)
-      ORDER BY court_no;
-    `)
+  // console.log(getReportMonthly);
 
-    console.log(getReportMonthly);
+  let reportDate = '20-03-2019';
 
+  let getReportDayBilling = await connection.execute(`
+    SELECT court_no, SUM(c.price), SUM(amount), SUM(price)-SUM(amount)
+    FROM billing  b
+    JOIN reservation r ON b.reserve_id = r.reserve_id
+    JOIN court c ON c.court_id = r.court_id
+    WHERE to_char(reserve_date, 'dd-mm-yyyy') ='` + reportDate + `'
+    GROUP BY court_no
+    ORDER BY court_no
+  `);
 
+  console.log(getReportDayBilling);
+
+  let kk = await connection.execute(`    select * from billing
+  WHERE to_char(bill_date, 'dd-mm-yyyy') ='20-03-2019'`)
+  console.log(kk);
 
 
 }
 
 run();
-
-
-
