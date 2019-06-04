@@ -40,6 +40,10 @@
         aria-controls="nav-admin" aria-selected="false">Admin</a>
       <a class="nav-item nav-link" id="nav-confirm-tab" data-toggle="tab" href="#nav-confirm" role="tab"
         aria-controls="nav-confirm" aria-selected="false">confirm</a>
+        <a class="nav-item nav-link" id="nav-report1-tab" data-toggle="tab" href="#nav-report1" role="tab"
+          aria-controls="nav-report1" aria-selected="false">report1</a>
+          <a class="nav-item nav-link" id="nav-report2-tab" data-toggle="tab" href="#nav-report2" role="tab"
+            aria-controls="nav-report2" aria-selected="false">report2</a>
     </div>
   </nav>
   <div class="container mt-5">
@@ -428,7 +432,8 @@
       <div class="tab-pane fade" id="nav-admin" role="tabpanel" aria-labelledby="nav-admin-tab">
         <div class="row">
 
-              <h2>Date <span class="h5 getdate"><input type="text" class="form-control" id="inputCode" name="code" placeholder="xx/xx/xxxx"></span></h2>
+          <h2>Date <span class="h5 getdate"><input type="text" class="form-control" id="inputCode" name="code"
+                placeholder="xx/xx/xxxx"></span></h2>
 
           <span id="inputReserveDate"><img src="/calendar.png" alt=""></button>
         </div>
@@ -517,7 +522,6 @@
           </div>
         </div>
       </div>
-
       <div class="tab-pane fade" id="nav-confirm" role="tabpanel" aria-labelledby="nav-confirm-tab">
         <div class="d-flex flex-column">
           <div class="form-group row">
@@ -602,6 +606,75 @@
         <div class="row nextbtn" style="position:absolute">
           <button type="button" class="btn btn-primary">Next</button>
         </div>
+      </div>
+      <div class="tab-pane fade" id="nav-report1" role="tabpanel" aria-labelledby="nav-report1-tab">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Court101</th>
+              <th scope="col">Court102</th>
+              <th scope="col">Court103</th>
+              <th scope="col">Court104</th>
+              <th scope="col">Court105</th>
+              <th scope="col">Court106</th>
+              <th scope="col">Court107</th>
+              <th scope="col">Court108</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+              <td>Mark</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane fade" id="nav-report2" role="tabpanel" aria-labelledby="nav-report2-tab">
+          <table class="table table-bordered text-center">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+              </tbody>
+            </table>
       </div>
     </div>
 </body>
