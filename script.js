@@ -104,6 +104,42 @@ $(function () {
     //POST  jsonInfo
     console.log(jsonInfo);
   })
+  $('.nav.nav-tabs').children().each(function(i){
+    if($(this).hasClass('active')){
+     $('.tab-content').children().eq(i).addClass('active show')
+    }
+  })
+  var tp=0
+  var td=0
+  var a=0
+  $('.table .txt-num').find('td').each(function(i){
+    var num = parseInt($(this).text())
+    if(i%3 ==0){
+      tp = tp + parseInt($(this).text())
+    } else if( i%3 == 1){
+      td = td + parseInt($(this).text())
+    } else if( i%3 == 2){
+      var n1 = $(this).prev().prev().text().replace(/\,/g,'')
+      var n2 = $(this).prev().text().replace(/\,/g,'')
+      num = n1-n2
+      a = a+num
+    }    
+    $(this).text(formatNumber(num))
+  })
+  $('.tp').text(formatNumber(tp))
+  $('.td').text(formatNumber(td))
+  $('.ta').text(formatNumber(a))
+  var sumline=0
+  $('.table .r-txt-1').find('td').each(function(i){    
+    var num = parseInt($(this).text())
+    sumline += num   
+    if(i%9 == 8){
+      num =sumline
+      sumline =0;
+    }
+    $(this).text(formatNumber(num))
+  })
+  // console.log( $('.table .txt-num').find('td').text())
 });
 
 // insert > usernamer,password to user table
@@ -160,3 +196,6 @@ var timecode = [{
   "status": "0"
 }]
 
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}

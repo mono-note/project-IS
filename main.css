@@ -13,13 +13,18 @@
 .card .card-subtitle{
   text-align: right;
 }
-
+p {margin: 0;}
 .card .card-img {
   cursor: pointer;
 }
 .card .card-img:hover {
   opacity: .9;
 }
+
+.report2 tbody td {
+  text-align: right;
+}
+
 /* pickdate */
 .pickDate {
   width: 33%;
@@ -76,3 +81,4 @@ display: none;
 #inputReserveDate:hover{
   opacity: .9;
 }
+
