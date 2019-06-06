@@ -610,15 +610,22 @@
       </div>
       <div class="tab-pane fade" id="nav-report1" role="tabpanel" aria-labelledby="nav-report1-tab" style="width:750px">
         <div class="form-group row">
-          <label for="inputEmail" class="col-sm-3 col-form-label h5">Monthly Report : </label>
-          <div class="col-sm-3">
+          <label for="inputEmail" class="pl-3 form-group mb-2 col-form-label h5">Monthly Report : </label>
+          <div class="form-group mx-sm-3 mb-2">
+            <select name="gyear" id="gyear1" class="form-control">
+              <option>- Year -</option>
+              <option selected value="2019">2019</option>
+              <option value="2018">2018</option>
+            </select>
+          </div>
+          <div class="mb-2">
             <select id='gMonth1' class="form-control">
               <option value=''>--Select Month--</option>
-              <option selected value='1'>Janaury</option>
+              <option value='1'>Janaury</option>
               <option value='2'>February</option>
               <option value='3'>March</option>
               <option value='4'>April</option>
-              <option value='5'>May</option>
+              <option selected value='5'>May</option>
               <option value='6'>June</option>
               <option value='7'>July</option>
               <option value='8'>August</option>
@@ -650,7 +657,7 @@
         </table>
       </div>
       <div class="tab-pane fade" id="nav-report2" role="tabpanel" aria-labelledby="nav-report2-tab" style="width:500px">
-        <p class="h5">Daily Report</p>
+        <p class=" form-group mb-3 h5">Daily Report</p>
         <table class="table table-bordered report2 text-center">
           <thead>
             <tr>

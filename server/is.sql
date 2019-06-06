@@ -155,22 +155,28 @@ INSERT INTO Reservation VALUES ('R0001','C0002','RD-0001','20/2/2019',sysdate,sy
 INSERT INTO Reservation_Detail VALUES ('detail_seq'.nextvalue,'RD-0001','COR-001','t1617')
 INSERT INTO Reservation_Detail VALUES ('detail_seq'.nextvalue,'RD-0001','COR-001','t1718')
 
-INSERT INTO Billing VALUES ('b002', 'R0003','29-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b004', 'R0005','29-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b005', 'R0006','29-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b006', 'R0007','29-MAY-19', 'NEW20', 130,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b007', 'R0008','29-MAY-19', 'NOCODE', 120,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b008', 'R0010','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b009', 'R0012','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b010', 'R0013','20-MAY-19', 'NEW20', 130,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b011', 'R0014','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b012', 'R0013','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b013', 'R0014','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b014', 'R0015','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
-INSERT INTO Billing VALUES ('b015', 'R0016','20-MAY-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b002', 'R0003','29-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b004', 'R0005','29-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b005', 'R0006','29-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b006', 'R0007','29-MAR-19', 'NEW20', 130,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b007', 'R0008','29-MAR-19', 'NOCODE', 120,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b008', 'R0010','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b009', 'R0012','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b010', 'R0013','20-MAR-19', 'NEW20', 130,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b011', 'R0014','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b012', 'R0013','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b013', 'R0014','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b014', 'R0015','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+INSERT INTO Billing VALUES ('b015', 'R0016','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);
 INSERT INTO Billing VALUES ('b016', 'R0018','20-APR-19', 'NEW20', 130,sysdate,sysdate);
 INSERT INTO Billing VALUES ('b017', 'R0019','20-APR-19', 'NOCODE', 150,sysdate,sysdate);
 INSERT INTO Billing VALUES ('b018', 'R0020','20-APR-19', 'NOCODE', 150,sysdate,sysdate);
 INSERT INTO Billing VALUES ('b019', 'R0021','20-APR-19', 'NOCODE', 150,sysdate,sysdate);
 INSERT INTO Billing VALUES ('b020', 'R0022','20-APR-19', 'NEW20', 130,sysdate,sysdate);
 INSERT INTO Billing VALUES ('b021', 'R0023','12-MAR-19', 'NOCODE', 150,sysdate,sysdate);
+
+
+INSERT INTO Reservation VALUES ('R0024','C0003','COR-001','t1718')
+
+
+INSERT INTO Billing VALUES ('b026', 'R0024','20-MAR-19', 'NOCODE', 150,sysdate,sysdate);

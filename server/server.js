@@ -229,31 +229,29 @@ async function run() {
 
   let reportDate = '20-03-2019';
 
-  let getReportDayBilling = await connection.execute(`
+  let getReportDaily = await connection.execute(`
     SELECT court_no, SUM(c.price), SUM(amount), SUM(price)-SUM(amount)
     FROM billing  b
     JOIN reservation r ON b.reserve_id = r.reserve_id
     JOIN court c ON c.court_id = r.court_id
-    WHERE to_char(reserve_date, 'dd-mm-yyyy') ='` + reportDate + `'
+    WHERE to_char(reserve_date, 'dd-mm-yyyy') = to_char(sysdate, 'dd-mm-yyyy')
     GROUP BY court_no
     ORDER BY court_no
   `);
 
-  console.log(getReportDayBilling);
+  console.log(getReportDaily);
 
-  let kk = await connection.execute(`
-    SELECT court_no, bill_date, sum(amount)
-    FROM billing b    
+  let getReportMonthly = await connection.execute(`
+    SELECT SUM(amount), reserve_date, court_no
+    FROM billing  b
     JOIN reservation r ON b.reserve_id = r.reserve_id
     JOIN court c ON c.court_id = r.court_id
-    WHERE to_char(reserve_date, 'mm-yyyy') ='` + reportPeriod + `'
-    GROUP BY court_no
-    ORDER BY court_no
+    WHERE to_char(reserve_date, 'mm-yyyy') = '03-2019'
+    GROUP BY reserve_date,court_no
+    ORDER BY reserve_date;
   `)
 
 
 }
 
 run();
-
-
