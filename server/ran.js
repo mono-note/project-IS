@@ -16,7 +16,7 @@ function random() {
 }
 var dayPerCourt = []
 
-for (var d = 0; d < 30; d++) { 
+for (var d = 0; d < 30; d++) {
   var court = []
   var sum = 0
   for (var i = 0; i < 8; i++) {
@@ -42,9 +42,9 @@ dayPerCourt.forEach(function(val,idx){
   var td='';
   txt += `
   <tr>
-  <th scope="row">`+day+`</th>
+  <th scope="row">`+day+`/03</th>
   `
-  val.court.forEach(function(data,i){  
+  val.court.forEach(function(data,i){
     td += `<td>`+formatNumber(data)+`</td>`
     if(i==7){
       td += `<td>`+formatNumber(val.sum)+`</td>`
